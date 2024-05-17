@@ -1,13 +1,45 @@
-import React from "react";
-import { Container } from "react-bootstrap";
+import React, { useState } from "react";
+import { Button, Card, Container, Form } from "react-bootstrap";
+import { Link, useNavigate } from "react-router-dom";
+import { fetcher } from "../services/fetcher";
 
 interface RegisterProps { }
 
 const Register = (props: RegisterProps) => {
+
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const navigate = useNavigate()
+
+    const handleSubmit = async (e:React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault()
+
+        fetcher('/auth/register','POST', { email, password })
+            .then(token => {
+                localStorage.setItem('token', token)
+                navigate('/')
+            })
+            .catch(() => alert('Something went wrong or Invalid credentials'))
+    }
    
     return (
         <Container>
-           
+           <Card>
+            <Card.Body>
+                <Card.Title>Register a new Book Account</Card.Title>
+                <Form onSubmit={handleSubmit}>
+                    <Form.Group>
+                        <Form.Label>Email</Form.Label>
+                        <Form.Control value={email} onChange={(e) => setEmail(e.target.value)}/>
+                    </Form.Group>
+                    <Form.Group>
+                        <Form.Label>Password</Form.Label>
+                        <Form.Control value={password} onChange={(e) => setPassword(e.target.value)}/>
+                    </Form.Group>
+                    <Button type="submit">Register</Button>
+                </Form>
+            </Card.Body>
+           </Card>
         </Container>
     );
 };
