@@ -24,7 +24,7 @@ const Books = (props: BooksProps) => {
                     </Card.Text>
                 </Card.Body>
                 <Card.Footer>
-                    <Link to={`/book/${book.id}`}>Details</Link>
+                    <Link to={`/books/${book.id}`}>Details</Link>
                 </Card.Footer>
             </Card>
             ))}
