@@ -14,7 +14,7 @@ router.get('/:id', async (req,res) => {
     }
 })
 
-router.get('/:', async (req,res) => {
+router.get('/', async (req,res) => {
     try {
         const books = await db.books.getAllBooks()
         res.status(200).json(books)
@@ -23,7 +23,7 @@ router.get('/:', async (req,res) => {
     }
 })
 
-router.post('/', async (req,res) => {
+router.post('/', tokenCheck, async (req,res) => {
     try {
         const {category_id, title, author, price} = req.body
         const bookResult = await db.books.insertBook(category_id,title,author,price || '')
@@ -33,7 +33,7 @@ router.post('/', async (req,res) => {
     }
 })
 
-router.put('/:id', async (req,res) => {
+router.put('/:id', tokenCheck, async (req,res) => {
     try {
         const id = parseInt(req.params.id, 10)
         const {category_id, title, author, price} = req.body
@@ -44,7 +44,7 @@ router.put('/:id', async (req,res) => {
     }
 })
 
-router.delete('/:id', async (req,res) => {
+router.delete('/:id', tokenCheck, async (req,res) => {
     try {
         const id = parseInt(req.params.id, 10)
         await db.books.deleteBook(id)
