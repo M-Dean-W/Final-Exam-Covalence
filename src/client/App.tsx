@@ -7,6 +7,7 @@ import AddBooks from "./views/AddBook";
 import EditBooks from "./views/EditBook";
 import Login from "./views/Login";
 import Register from "./views/Register";
+import CompleteNav from "./components/CompleteNav";
 
 interface AppProps { }
 
@@ -14,6 +15,7 @@ const App = (props: AppProps) => {
   
     return (
         <BrowserRouter>
+        <CompleteNav/>
         <Routes>
             <Route path="/" element={<Home/>}></Route>
             <Route path="/books" element={<Books/>}></Route>
