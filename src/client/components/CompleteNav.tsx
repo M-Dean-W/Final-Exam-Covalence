@@ -13,13 +13,13 @@ const CompleteNav = (props: CompleteNavProps) => {
         }
 
     return (
-        <Navbar>
+        <Navbar bg="dark" data-bs-theme="dark">
             <Nav>
                 <Nav.Link as={NavLink} to={'/'}>Home</Nav.Link>
                 <Nav.Link as={NavLink} to={'/books'}>Books</Nav.Link>
                 <Nav.Link as={NavLink} to={'/books/new'}>Add Books</Nav.Link>
                 <Nav.Link as={NavLink} to={'/login'}>Login</Nav.Link>
-                <Button onClick={logout}>Logout</Button>
+                <Button onClick={logout} className="btn-secondary">Logout</Button>
             </Nav>
         </Navbar>
     )

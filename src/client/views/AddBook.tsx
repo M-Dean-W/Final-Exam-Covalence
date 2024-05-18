@@ -37,7 +37,7 @@ const AddBooks = (props: AddBooksProps) => {
 
     return (
         <Container>
-           <Card>
+           <Card className="m-3">
             <Card.Body>
                 <Card.Title>Login to your Book Account</Card.Title>
                 <Form onSubmit={handleSubmit}>
@@ -59,7 +59,7 @@ const AddBooks = (props: AddBooksProps) => {
                         <Form.Label>Price</Form.Label>
                         <Form.Control type="number" value={price} onChange={(e) => setPrice(Number(e.target.value))}/>
                     </Form.Group>
-                    <Button type="submit">Login</Button>
+                    <Button className="mt-2 btn-secondary" type="submit">Login</Button>
                 </Form>
             </Card.Body>
            </Card>

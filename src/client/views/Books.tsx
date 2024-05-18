@@ -15,19 +15,23 @@ const Books = (props: BooksProps) => {
 
     return (
         <Container>
-            {books.map(book => (
-            <Card key={book.id}>
-                <Card.Title>{book.title}</Card.Title>
-                <Card.Subtitle>{book.author}</Card.Subtitle>
-                <Card.Body>
-                    <Card.Text>
-                    </Card.Text>
-                </Card.Body>
-                <Card.Footer>
-                    <Link to={`/books/${book.id}`}>Details</Link>
-                </Card.Footer>
-            </Card>
-            ))}
+            <div className="row justify-content-around p-3">
+                <div className='col-sm-4 col-md-6'>
+                    {books.map(book => (
+                        <Card className="m-3" key={book.id}>
+                            <Card.Title className="text-center">{book.title}</Card.Title>
+                            <Card.Subtitle className="text-center">{book.author}</Card.Subtitle>
+                            <Card.Body>
+                                <Card.Text>
+                                </Card.Text>
+                            </Card.Body>
+                            <Card.Footer>
+                                <Link to={`/books/${book.id}`} className="btn btn-secondary text">Details</Link>
+                            </Card.Footer>
+                        </Card>
+                    ))}
+                </div>
+            </div>
         </Container>
     );
 };

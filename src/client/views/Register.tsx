@@ -24,7 +24,7 @@ const Register = (props: RegisterProps) => {
    
     return (
         <Container>
-           <Card>
+           <Card className="m-3">
             <Card.Body>
                 <Card.Title>Register a new Book Account</Card.Title>
                 <Form onSubmit={handleSubmit}>
@@ -36,7 +36,7 @@ const Register = (props: RegisterProps) => {
                         <Form.Label>Password</Form.Label>
                         <Form.Control value={password} onChange={(e) => setPassword(e.target.value)}/>
                     </Form.Group>
-                    <Button type="submit">Register</Button>
+                    <Button type="submit" className="mt-2 btn-secondary">Register</Button>
                 </Form>
             </Card.Body>
            </Card>

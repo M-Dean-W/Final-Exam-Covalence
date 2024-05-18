@@ -24,7 +24,7 @@ const Login = (props: LoginProps) => {
    
     return (
         <Container>
-           <Card>
+           <Card className="m-3">
             <Card.Body>
                 <Card.Title>Login to your Book Account</Card.Title>
                 <Form onSubmit={handleSubmit}>
@@ -36,8 +36,8 @@ const Login = (props: LoginProps) => {
                         <Form.Label>Password</Form.Label>
                         <Form.Control value={password} onChange={(e) => setPassword(e.target.value)}/>
                     </Form.Group>
-                    <Button type="submit">Login</Button>
-                    <Link to={'/register'}>Register New Account</Link>
+                    <Button className="m-2 btn-secondary" type="submit">Login</Button>
+                    <Link to={'/register'} className="btn btn-dark">Register New Account</Link>
                 </Form>
             </Card.Body>
            </Card>

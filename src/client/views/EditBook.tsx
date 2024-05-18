@@ -57,7 +57,7 @@ const EditBooks = (props: EditBooksProps) => {
 
     return (
         <Container>
-           <Card>
+           <Card className="m-3">
             <Card.Body>
                 <Card.Title>Login to your Book Account</Card.Title>
                 <Form onSubmit={handleSubmit}>
@@ -79,7 +79,7 @@ const EditBooks = (props: EditBooksProps) => {
                         <Form.Label>Price</Form.Label>
                         <Form.Control type="number" value={price} onChange={(e) => setPrice(Number(e.target.value))}/>
                     </Form.Group>
-                    <Button type="submit">Submit</Button>
+                    <Button className="mt-2 btn-secondary" type="submit">Submit</Button>
                 </Form>
             </Card.Body>
             <CardFooter>

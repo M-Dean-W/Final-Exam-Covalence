@@ -9,15 +9,14 @@ const Home = (props: HomeProps) => {
 
     return (
         <Container>
-            <Card>
+            <Card className="rounded-3 m-3">
                 <Card.Title></Card.Title>
                 <Card.Subtitle></Card.Subtitle>
                 <Card.Body>
-                    <Card.Text>
+                    <Card.Text className="text-center" style={{ fontSize: '2em'}}>
                         Welcome to the Bookstore Homepage! To gain access to adding and editing books, please login or register a new account! 
                     </Card.Text>
                 </Card.Body>
-                <Card.Footer></Card.Footer>
             </Card>
         </Container>
     );
