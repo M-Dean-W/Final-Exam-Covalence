@@ -12,7 +12,7 @@ const EditBooks = (props: EditBooksProps) => {
     const [category_id, setCatID] = useState<number | null>(null)
     const [title, setTitle] = useState('')
     const [author, setAuthor] = useState('')
-    const [price, setPrice] = useState<number>()
+    const [price, setPrice] = useState<number>(0)
     const token = localStorage.getItem('token')
     const [book, setBook] = useState<Book[]>([]);
     const {id} = useParams()
@@ -59,7 +59,7 @@ const EditBooks = (props: EditBooksProps) => {
         <Container>
            <Card className="m-3">
             <Card.Body>
-                <Card.Title>Login to your Book Account</Card.Title>
+                <Card.Title>Edit info and submit or delete book</Card.Title>
                 <Form onSubmit={handleSubmit}>
                     <Form.Select value={category_id ?? ''} onChange={(e) => setCatID(Number(e.target.value))}>
                         <option>Select Category</option>

@@ -12,7 +12,7 @@ const AddBooks = (props: AddBooksProps) => {
     const [category_id, setCatID] = useState<number | null>(null)
     const [title, setTitle] = useState('')
     const [author, setAuthor] = useState('')
-    const [price, setPrice] = useState<number>()
+    const [price, setPrice] = useState<number>(0)
     const token = localStorage.getItem('token')
 
     if (!token) {
@@ -39,7 +39,7 @@ const AddBooks = (props: AddBooksProps) => {
         <Container>
            <Card className="m-3">
             <Card.Body>
-                <Card.Title>Login to your Book Account</Card.Title>
+                <Card.Title>Fill out info</Card.Title>
                 <Form onSubmit={handleSubmit}>
                     <Form.Select value={category_id ?? ''} onChange={(e) => setCatID(Number(e.target.value))}>
                         <option>Select Category</option>
@@ -59,7 +59,7 @@ const AddBooks = (props: AddBooksProps) => {
                         <Form.Label>Price</Form.Label>
                         <Form.Control type="number" value={price} onChange={(e) => setPrice(Number(e.target.value))}/>
                     </Form.Group>
-                    <Button className="mt-2 btn-secondary" type="submit">Login</Button>
+                    <Button className="mt-2 btn-secondary" type="submit">Submit</Button>
                 </Form>
             </Card.Body>
            </Card>
